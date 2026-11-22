@@ -1,162 +1,440 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Давай знакомиться: 20 вопросов</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
-<style>
-:root{--bg:#f6f5f2;--card:#fff;--tx:#1d1d1b;--mut:#6c6a64;--ac:#3b5bdb;--acx:#fff;--bd:#e4e2dc;--note:#fff6dc;--notebd:#ecd9a0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--bg:#171717;--card:#222221;--tx:#efeeea;--mut:#9b9a94;--ac:#7c93f5;--acx:#10131f;--bd:#33332f;--note:#3a3320;--notebd:#5a4d28;color-scheme:dark}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:620px;margin:0 auto;padding:28px 18px 60px}
-h1{font-size:26px;margin:0 0 6px}h2{font-size:21px;line-height:1.3;margin:0 0 16px}
-p{margin:0 0 14px}.mut{color:var(--mut)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px;margin-bottom:16px}
-input,textarea{width:100%;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:11px 12px;margin-bottom:12px}
-textarea{min-height:110px;resize:vertical}
-input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
-button,a.btn{display:inline-block;text-align:center;text-decoration:none;font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:11px 16px}
-button.pri,a.btn.pri{background:var(--ac);color:var(--acx);border-color:var(--ac);font-weight:600}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}.row>*{flex:1}
-.bar{height:6px;background:var(--bd);border-radius:3px;margin-bottom:18px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
-.note{background:var(--note);border:1px solid var(--notebd);border-radius:12px;padding:14px 16px;margin-bottom:16px}
-.err{color:#c0392b}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f5f2">
+  <title>Давай знакомиться: 20 вопросов</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --card: #fff;
+      --tx: #1d1d1b;
+      --mut: #6c6a64;
+      --ac: #3b5bdb;
+      --acx: #fff;
+      --bd: #e4e2dc;
+      --note: #fff6dc;
+      --notebd: #ecd9a0;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171717;
+        --card: #222221;
+        --tx: #efeeea;
+        --mut: #9b9a94;
+        --ac: #7c93f5;
+        --acx: #10131f;
+        --bd: #33332f;
+        --note: #3a3320;
+        --notebd: #5a4d28;
+        color-scheme: dark;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+      background: var(--bg);
+      color: var(--tx);
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    h1 { font-size: 26px; margin: 0 0 6px; }
+    h2 { font-size: 21px; line-height: 1.3; margin: 0 0 16px; }
+    p { margin: 0 0 14px; }
+    .mut { color: var(--mut); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--bd);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    input, textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--tx);
+      background: var(--bg);
+      border: 1px solid var(--bd);
+      border-radius: 10px;
+      padding: 11px 12px;
+      margin-bottom: 12px;
+    }
+
+    textarea { min-height: 110px; resize: vertical; }
+
+    input:focus, textarea:focus {
+      outline: 2px solid var(--ac);
+      outline-offset: 1px;
+    }
+
+    button, a.btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font: inherit;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 1px solid var(--bd);
+      background: var(--card);
+      color: var(--tx);
+      padding: 11px 16px;
+    }
+
+    button.pri, a.btn.pri {
+      background: var(--ac);
+      color: var(--acx);
+      border-color: var(--ac);
+      font-weight: 600;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .row > * { flex: 1; min-width: 0; }
+
+    .bar {
+      height: 6px;
+      background: var(--bd);
+      border-radius: 3px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      background: var(--ac);
+    }
+
+    .note {
+      background: var(--note);
+      border: 1px solid var(--notebd);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .err { color: #c0392b; }
+
+    @media (max-width: 420px) {
+      main { padding: 22px 14px 40px; }
+      .card { padding: 16px; }
+      .row { gap: 8px; }
+    }
+  </style>
 </head>
 <body>
-<main id="app"></main>
-<script>
-// ====== НАСТРОЙКА: ваш Telegram-username без @ ======
-const TG_USERNAME = "your_username";
-// Можно переопределить в ссылке: https://.../?to=другой_username
-// =====================================================
+  <main id="app"></main>
 
-const QUESTIONS=[
-"Какую мелочь ты бы не променялf на что угодно?",
-"Чему ты научилась недавно, что тебя удивило?",
-"Какое место ты считаешь «своим», хотя оно необязательно красивое?",
-"Какой совет ты слышала много раз, но так и не приняла?",
-"Что ты делаешь, когда никто не видит, и не стыдишься этого?",
-"Какое твоё мнение большинство людей считает странным?",
-"Какой день из прошлого ты бы прожила ещё раз без изменений?",
-"Что тебя быстро выбивает из себя, а что наоборот — спасает?",
-"Какую профессию ты бы попробовала на один год, если бы не было последствий?",
-"Какая вещь у тебя есть дольше всего, и почему она всё ещё с тобой?",
-"О чём ты могла бы говорить часами, если бы тебя спросили?",
-"Что для тебя значит «хороший вечер»?",
-"За что тебе до сих пор немного неловко?",
-"Какой навык у тебя недооценён окружающими?",
-"Кто или что сильнее всего повлияло на твой вкус к: (музыке, еде, кино)?",
-"Что бы ты хотела, чтобы люди понимали о тебе с первой встречи?",
-"Какое решение казалось маленьким, а оказалось поворотным?",
-"Чего ты ждёшь от следующего года — не целей, а ощущений?",
-"Что ты любишь в людях, но редко говоришь об этом вслух?",
-"Какой вопрос ты бы хотела, чтобы тебе задали?"];
-const N=QUESTIONS.length;
-const $=s=>document.querySelector(s),app=$("#app");
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  <script>
+    // Укажи Telegram username без символа @
+    const TG_USERNAME = "your_username";
 
-const toParam=(new URLSearchParams(location.search).get("to")||"").replace(/[^A-Za-z0-9_]/g,"").slice(0,32);
-const TG=toParam||TG_USERNAME;
+    const QUESTIONS = [
+      "Какую мелочь ты бы не променял(а) на что угодно?",
+      "Чему ты научился(ась) недавно, что тебя удивило?",
+      "Какое место ты считаешь «своим», хотя оно необязательно красивое?",
+      "Какой совет ты слышал(а) много раз, но так и не принял(а)?",
+      "Что ты делаешь, когда никто не видит, и не стыдишься этого?",
+      "Какое твоё мнение большинство людей считает странным?",
+      "Какой день из прошлого ты бы прожил(а) ещё раз без изменений?",
+      "Что тебя быстро выбивает из себя, а что наоборот — спасает?",
+      "Какую профессию ты бы попробовал(а) на один год, если бы не было последствий?",
+      "Какая вещь у тебя есть дольше всего, и почему она всё ещё с тобой?",
+      "О чём ты мог(ла) бы говорить часами, если бы тебя спросили?",
+      "Что для тебя значит «хороший вечер»?",
+      "За что тебе до сих пор немного неловко?",
+      "Какой навык у тебя недооценён окружающими?",
+      "Кто или что сильнее всего повлияло на твой вкус (музыка, еда, кино)?",
+      "Что бы ты хотел(а), чтобы люди понимали о тебе с первой встречи?",
+      "Какое решение казалось маленьким, а оказалось поворотным?",
+      "Чего ты ждёшь от следующего года — не целей, а ощущений?",
+      "Что ты любишь в людях, но редко говоришь об этом вслух?",
+      "Какой вопрос ты бы хотел(а), чтобы тебе задали?"
+    ];
 
-// Прогресс хранится только на устройстве человека (localStorage)
-const KEY="icebreaker_v1";
-let st={name:"",answers:[],idx:-1}; // idx: -1 = старт, 0..N-1 = вопрос, N = финал
-try{
-  const s=JSON.parse(localStorage.getItem(KEY));
-  if(s&&Array.isArray(s.answers)&&typeof s.idx==="number")st=s;
-}catch(e){}
-const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
-const answered=i=>typeof st.answers[i]==="string"&&st.answers[i]!=="";
+    const N = QUESTIONS.length;
+    const app = document.getElementById("app");
+    const KEY = "icebreaker_v1";
+    const params = new URLSearchParams(window.location.search);
+    const toParam = (params.get("to") || "").replace(/[^A-Za-z0-9_]/g, "").slice(0, 32);
+    const TG = toParam || TG_USERNAME;
 
-function buildText(){
-  return "Ответы на вопросы для знакомства — "+st.name+"\n\n"+
-    QUESTIONS.map((q,i)=>(i+1)+". "+q+"\n"+(answered(i)?st.answers[i]:"—")).join("\n\n");
-}
+    const escapeHTML = value => String(value).replace(/[&<>"]/g, char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;"
+    })[char]);
 
-function start(msg){
-  const started=st.answers.some((_,i)=>answered(i));
-  app.innerHTML=`<h1>20 вопросов для знакомства</h1>
-  <p class="mut">Отвечай честно и своими словами. Это не тест, правильных ответов нет. В конце ты получишь готовый текст, который нужно будет отправить человеку в Telegram. В замен ты получишь ответы второго человека</p>
-  <div class="card"><input id="nm" placeholder="Как тебя зовут?" maxlength="40" value="${esc(st.name)}">
-  <button class="pri" id="go" style="width:100%">${started?"Продолжить":"Начать"}</button>
-  ${started?'<button id="rs0" style="width:100%;margin-top:10px">Начать заново</button>':""}
-  ${msg?`<p class="err" style="margin:12px 0 0">${msg}</p>`:""}</div>`;
-  $("#go").onclick=()=>{
-    const n=$("#nm").value.trim();
-    if(!n)return start("Напиши, как тебя зовут");
-    st.name=n;
-    let i=0;while(i<N&&answered(i))i++;
-    st.idx=i;persist();render();
-  };
-  const r=$("#rs0");
-  if(r)r.onclick=()=>{if(confirm("Удалить все ответы и начать заново?")){st={name:"",answers:[],idx:-1};persist();render()}};
-}
+    let state = { name: "", answers: [], idx: -1 };
 
-function question(){
-  const i=st.idx;
-  app.innerHTML=`<div class="bar"><i style="width:${i/N*100}%"></i></div>
-  <div class="card"><p class="mut" style="font-size:14px">Вопрос ${i+1} из ${N}</p><h2>${esc(QUESTIONS[i])}</h2>
-  <textarea id="an" placeholder="Твой ответ…" maxlength="800">${esc(answered(i)?st.answers[i]:"")}</textarea>
-  <div class="row" style="margin:0">${i>0?'<button id="bk">Назад</button>':""}<button id="sk">Пропустить</button><button class="pri" id="nx">${i===N-1?"Завершить":"Дальше"}</button></div></div>`;
-  const ta=$("#an");ta.focus();
-  const go=(v,to)=>{st.answers[i]=v;st.idx=to;persist();render();window.scrollTo(0,0)};
-  $("#nx").onclick=()=>{const v=ta.value.trim();if(!v){ta.focus();return}go(v,i+1)};
-  $("#sk").onclick=()=>go("",i+1);
-  if(i>0)$("#bk").onclick=()=>go(ta.value.trim(),i-1);
-}
+    try {
+      const saved = JSON.parse(localStorage.getItem(KEY));
+      if (
+        saved &&
+        typeof saved.name === "string" &&
+        Array.isArray(saved.answers) &&
+        typeof saved.idx === "number" &&
+        saved.idx >= -1 &&
+        saved.idx <= N
+      ) {
+        state = {
+          name: saved.name,
+          answers: saved.answers.slice(0, N).map(answer =>
+            typeof answer === "string" ? answer : ""
+          ),
+          idx: saved.idx
+        };
+      }
+    } catch (error) {
+      // Если сохранённые данные повреждены, начнём с пустого состояния.
+    }
 
-function download(text){
-  const safe=(st.name||"answers").replace(/[^\wа-яё-]+/gi,"_").slice(0,30)||"answers";
-  const blob=new Blob(["\ufeff"+text],{type:"text/plain;charset=utf-8"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;a.download="otvety_"+safe+".txt";
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),2000);
-}
+    function saveProgress() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+      } catch (error) {
+        // Сайт продолжит работать, даже если браузер запрещает сохранение.
+      }
+    }
 
-function finish(){
-  const text=buildText();
-  app.innerHTML=`<h1>Готово, ${esc(st.name)}! 🎉</h1>
-  <div class="note"><b>Последний шаг.</b> Твои ответы нигде не сохранены и сами никуда не отправлялись. Отправь их в Telegram: <b>@${esc(TG)}</b>.</div>
-  <div class="card">
-    <textarea id="out" readonly style="min-height:260px;margin-bottom:12px">${esc(text)}</textarea>
-    <div class="row">
-      <button class="pri" id="cp">Скопировать</button>
-      <button id="dl">Скачать файлом (.txt)</button>
-    </div>
-    <div class="row" style="margin-bottom:0">
-      <button id="sh" style="display:none">Поделиться…</button>
-      <a class="btn" id="tg" href="https://t.me/${esc(TG)}" target="_blank" rel="noopener">Открыть Telegram</a>
-    </div>
-    <p class="mut" style="font-size:14px;margin:12px 0 0">Если копирование не сработало, нажми «Скачать файлом» и отправь файл в чат Telegram как вложение. Текст в окне выше можно выделить и скопировать вручную.</p>
-  </div>
-  <div class="row"><button id="ed">Изменить ответы</button><button id="rs">Начать заново</button></div>`;
-  $("#cp").onclick=async()=>{
-    let ok=false;
-    try{await navigator.clipboard.writeText(text);ok=true}catch(e){}
-    if(!ok){const o=$("#out");o.removeAttribute("readonly");o.focus();o.select();o.setSelectionRange(0,text.length+1);
-      try{ok=document.execCommand("copy")}catch(_){}o.setAttribute("readonly","")}
-    $("#cp").textContent=ok?"Скопировано ✓":"Не вышло — выдели текст вручную";
-  };
-  $("#dl").onclick=()=>download(text);
-  if(navigator.share){
-    const b=$("#sh");b.style.display="";
-    b.onclick=()=>navigator.share({title:"Мои ответы",text}).catch(()=>{});
-  }
-  $("#ed").onclick=()=>{st.idx=0;persist();render();window.scrollTo(0,0)};
-  $("#rs").onclick=()=>{if(confirm("Удалить все ответы и начать заново?")){st={name:"",answers:[],idx:-1};persist();render()}};
-}
+    function hasAnswer(index) {
+      return typeof state.answers[index] === "string" &&
+        state.answers[index].trim() !== "";
+    }
 
-function render(){
-  if(st.idx<0||st.idx>N)start();
-  else if(st.idx===N)finish();
-  else question();
-}
-render();
-</script>
+    function buildText() {
+      return "Ответы на вопросы для знакомства — " + state.name + "\n\n" +
+        QUESTIONS.map((question, index) =>
+          (index + 1) + ". " + question + "\n" +
+          (hasAnswer(index) ? state.answers[index] : "—")
+        ).join("\n\n");
+    }
+
+    function startOver() {
+      if (!confirm("Удалить все ответы и начать заново?")) return;
+      state = { name: "", answers: [], idx: -1 };
+      saveProgress();
+      render();
+    }
+
+    function showStart(message = "") {
+      const hasProgress = state.answers.some((answer, index) =>
+        typeof answer === "string" && answer.trim() !== ""
+      );
+
+      app.innerHTML = `
+        <h1>20 вопросов для знакомства</h1>
+        <p class="mut">Отвечай честно и своими словами. Это не тест, правильных ответов нет. В конце ты получишь готовый текст, который можно отправить человеку в Telegram.</p>
+        <section class="card">
+          <input id="name" type="text" maxlength="40"
+            placeholder="Как тебя зовут?" value="${escapeHTML(state.name)}">
+          <button class="pri" id="start" style="width:100%">
+            ${hasProgress ? "Продолжить" : "Начать"}
+          </button>
+          ${hasProgress ? '<button id="resetStart" style="width:100%;margin-top:10px">Начать заново</button>' : ""}
+          ${message ? `<p class="err" style="margin:12px 0 0">${escapeHTML(message)}</p>` : ""}
+        </section>
+      `;
+
+      document.getElementById("start").onclick = () => {
+        const name = document.getElementById("name").value.trim();
+        if (!name) {
+          showStart("Напиши, как тебя зовут");
+          return;
+        }
+
+        state.name = name;
+
+        // Продолжаем с первого вопроса без ответа.
+        let next = 0;
+        while (next < N && hasAnswer(next)) next++;
+
+        state.idx = next;
+        saveProgress();
+        render();
+      };
+
+      const resetButton = document.getElementById("resetStart");
+      if (resetButton) resetButton.onclick = startOver;
+    }
+
+    function showQuestion() {
+      const index = state.idx;
+
+      app.innerHTML = `
+        <div class="bar"><i style="width:${(index / N) * 100}%"></i></div>
+        <section class="card">
+          <p class="mut" style="font-size:14px">Вопрос ${index + 1} из ${N}</p>
+          <h2>${escapeHTML(QUESTIONS[index])}</h2>
+          <textarea id="answer" maxlength="800" placeholder="Твой ответ…">${escapeHTML(state.answers[index] || "")}</textarea>
+          <div class="row" style="margin:0">
+            ${index > 0 ? '<button id="back">Назад</button>' : ""}
+            <button id="skip">Пропустить</button>
+            <button class="pri" id="next">${index === N - 1 ? "Завершить" : "Дальше"}</button>
+          </div>
+        </section>
+      `;
+
+      const answerField = document.getElementById("answer");
+
+      function go(value, nextIndex) {
+        state.answers[index] = value;
+        state.idx = nextIndex;
+        saveProgress();
+        render();
+        window.scrollTo(0, 0);
+      }
+
+      document.getElementById("next").onclick = () => {
+        const value = answerField.value.trim();
+        if (!value) {
+          answerField.focus();
+          return;
+        }
+        go(value, index + 1);
+      };
+
+      document.getElementById("skip").onclick = () => go("", index + 1);
+
+      if (index > 0) {
+        document.getElementById("back").onclick = () => {
+          state.answers[index] = answerField.value.trim();
+          state.idx = index - 1;
+          saveProgress();
+          render();
+          window.scrollTo(0, 0);
+        };
+      }
+    }
+
+    function downloadText(text) {
+      const safeName = (state.name || "answers")
+        .replace(/[^\wа-яё-]+/gi, "_")
+        .slice(0, 30) || "answers";
+
+      const file = new Blob(["\ufeff" + text], {
+        type: "text/plain;charset=utf-8"
+      });
+
+      const url = URL.createObjectURL(file);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "otvety_" + safeName + ".txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }
+
+    function showFinish() {
+      const text = buildText();
+      const telegramLink = TG && TG !== "your_username"
+        ? `https://t.me/${encodeURIComponent(TG)}`
+        : "https://t.me/";
+
+      app.innerHTML = `
+        <h1>Готово, ${escapeHTML(state.name)}! 🎉</h1>
+        <div class="note">
+          <b>Последний шаг.</b> Ответы сохранены в браузере на этом устройстве и автоматически никуда не отправлялись.
+          Отправь готовый текст человеку в Telegram: <b>${TG ? "@" + escapeHTML(TG) : "открой Telegram"}</b>.
+        </div>
+        <section class="card">
+          <textarea id="output" readonly style="min-height:260px;margin-bottom:12px">${escapeHTML(text)}</textarea>
+          <div class="row">
+            <button class="pri" id="copy">Скопировать</button>
+            <button id="download">Скачать файл (.txt)</button>
+          </div>
+          <div class="row" style="margin-bottom:0">
+            <button id="share" style="display:none">Поделиться…</button>
+            <a class="btn" href="${telegramLink}" target="_blank" rel="noopener">Открыть Telegram</a>
+          </div>
+          <p class="mut" style="font-size:14px;margin:12px 0 0">
+            Если копирование не сработало, скачай файл и отправь его в Telegram как вложение. Текст также можно выделить и скопировать вручную.
+          </p>
+        </section>
+        <div class="row">
+          <button id="edit">Изменить ответы</button>
+          <button id="reset">Начать заново</button>
+        </div>
+      `;
+
+      document.getElementById("copy").onclick = async () => {
+        let copied = false;
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            copied = true;
+          }
+        } catch (error) {}
+
+        if (!copied) {
+          const output = document.getElementById("output");
+          output.removeAttribute("readonly");
+          output.focus();
+          output.select();
+          try {
+            copied = document.execCommand("copy");
+          } catch (error) {}
+          output.setAttribute("readonly", "");
+        }
+
+        document.getElementById("copy").textContent = copied
+          ? "Скопировано ✓"
+          : "Выдели текст вручную";
+      };
+
+      document.getElementById("download").onclick = () => downloadText(text);
+
+      if (navigator.share) {
+        const shareButton = document.getElementById("share");
+        shareButton.style.display = "";
+        shareButton.onclick = () => {
+          navigator.share({ title: "Мои ответы", text }).catch(() => {});
+        };
+      }
+
+      document.getElementById("edit").onclick = () => {
+        state.idx = 0;
+        saveProgress();
+        render();
+        window.scrollTo(0, 0);
+      };
+
+      document.getElementById("reset").onclick = startOver;
+    }
+
+    function render() {
+      if (state.idx < 0 || state.idx > N) {
+        showStart();
+      } else if (state.idx === N) {
+        showFinish();
+      } else {
+        showQuestion();
+      }
+    }
+
+    render();
+  </script>
 </body>
 </html>
